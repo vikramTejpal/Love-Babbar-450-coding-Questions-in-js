@@ -1,0 +1,36 @@
+https://leetcode.com/problems/rotate-array/submissions/
+
+//O(kn)
+for(let i=0;i<k;i++){
+        let temp=nums.pop()
+        nums.unshift(temp)
+    }
+    return nums
+    
+    
+    //or
+    
+let rest = nums.splice(k + 1);
+        for (let i = 0; i < nums.length; i++) {
+          rest.push(nums[i]);
+        }
+        return rest;
+   
+    //or
+    
+        for (let i = 0; i < k; i++) {
+          let last = nums.pop();
+          nums.unshift(last);
+        }
+        return nums;
+    
+      if (nums.length > k) {
+          nums.unshift(...nums.splice(-k));
+        } else {
+          let i = 0;
+          while (i < k) {
+            nums.unshift(nums.splice(-1));
+            i++;
+          }
+        }
+        return nums;
