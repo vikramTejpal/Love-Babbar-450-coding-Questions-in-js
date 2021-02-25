@@ -1,0 +1,10 @@
+https://leetcode.com/problems/intersection-of-two-arrays/submissions/
+
+var intersection = function(nums1, nums2) {
+   var ans = [],val;
+  for(var i = 0; i<nums1.length;i++){
+    val = nums1[i]
+    if(nums2.includes(val) && !ans.includes(val)) ans.push(val)
+  }
+  return ans
+};
