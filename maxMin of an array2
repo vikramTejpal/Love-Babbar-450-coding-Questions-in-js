@@ -1,0 +1,40 @@
+int[] findMinMax(int A[], int start, int end)
+{
+    int max;
+    int min;
+    if ( start == end )
+    {
+        max = A[start]
+        min = A[start]
+    }
+    else if ( start + 1 == end )
+    {
+        if ( A[start] < A[end] )
+        {
+            max = A[end]
+            min = A[start]
+        }
+        else
+        {
+            max = A[start]
+            min = A[end]
+        }
+    }
+    else
+    {
+        int mid = start + (end - start)/2
+        int left[] = findMinMax(A, start, mid)
+        int right[] = findMinMax(A, mid+1, end)
+        if ( left[0] > right[0] )
+            max = left[0]
+        else
+            max = right[0]
+        if ( left[1] < right[1] )
+            min = left[1]
+        else
+            min = right[1]
+    }
+    // By convention, we assume ans[0] as max and ans[1] as min
+    int ans[2] = {max, min}
+   return ans
+}
