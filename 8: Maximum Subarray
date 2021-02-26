@@ -1,0 +1,17 @@
+https://leetcode.com/problems/maximum-subarray/
+
+var maxSubArray = function(nums) {
+
+   let sum=nums[0]
+  let max=nums[0]
+    for(let i=1;i<nums.length;i++){
+        sum=sum+nums[i]
+        sum=Math.max(sum,nums[i])
+        max=Math.max(sum,max)
+    }
+    return max
+
+};
+//o(n)->time complexity
+Runtime: 42 ms, faster than 83.04% of JavaScript online submissions for Maximum Subarray.
+Memory Usage: 39.1 MB, less than 81.54% of JavaScript online submissions for Maximum Subarray.
