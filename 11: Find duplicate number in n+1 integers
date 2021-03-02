@@ -1,0 +1,38 @@
+//NlogN
+var findDuplicate = function(nums) {
+    nums=nums.sort()
+    for(let i=0;i<nums.length;i++){
+        if(nums[i]===nums[i+1]){
+            return nums[i]
+        }
+    }
+};'
+
+//O(N)
+let ind = Math.abs(nums[i])-1;
+        
+        if (nums[ind] < 0) {
+            return Math.abs(nums[i]);
+        } else {
+            nums[ind] = -Math.abs(nums[ind]);
+        }
+        
+ //O(N)
+ 
+//Runtime: 76 ms, faster than 93.05% of JavaScript online submissions for Find the Duplicate Number.
+//Memory Usage: 40.2 MB, less than 40.59% of JavaScript online submissions for Find the Duplicate Number.
+
+
+ var findDuplicate = function(nums) {
+    
+    let obj={}
+    for (let i = 0; i < nums.length; i++) {
+        if(!obj[nums[i]]){
+            obj[nums[i]]=1
+        }else{
+            return nums[i]
+        }
+    }
+    
+    
+};
