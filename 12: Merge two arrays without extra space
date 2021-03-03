@@ -21,3 +21,20 @@ Runtime: 80 ms, faster than 68.52% of JavaScript online submissions for Merge So
 Memory Usage: 38.7 MB, less than 55.04% of JavaScript online submissions for Merge Sorted Array.
 Next challenges:
 
+//OR
+
+var merge = function(nums1, m, nums2, n) {
+let i = 0;
+    while(nums2.length) {
+	// if the value in nums 2 is less than the current one in nums1, or we are looking at first index and there is nothing in nums1, 
+	// or if we are at the end of nums1 (adding nums2 length for each one we have added from nums2 so far)
+       if(nums2[0] <= nums1[i] || (i=== 0 && m === 0) || i >= m + n-nums2.length) {
+           nums1.splice(i,0,nums2.shift());
+       }
+        i++;
+    }
+	// get rid of trailing 0's
+    while(nums1.length > m+n) {
+        nums1.pop();
+    }
+};
